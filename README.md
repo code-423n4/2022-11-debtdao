@@ -37,10 +37,8 @@ These are the most relevant sections for Code4rena wardens.
 ## Spigot 
 Since the Spigot takes ownership of another protocol/DAO's smart contracts to secure their revenue streams (e.g. owning a Yearn vault to ensure vault fees repays Yearn's debt) we want to make sure that the Spigot can't get bricked locking their contract forever, that their contract can't be stolen from the Spigot and that revenue tokens are securely escrowed inside the Spigot for the Owner to claim.
 
-
 ## SpigotedLine
 Our integration between the Line of Credit and Spigot contracts. It owns the Spigot so it's important that it doesn't lose ownership of the Spigot (unless `releaseSpigot()` successfully executes) so that it can properly manage and call the Spigot contract. It must be able to trade revenue tokens captured by the Spigot to credit tokens owed to Lenders using 0x protocol. 
-
 
 # Smart Contracts
 
