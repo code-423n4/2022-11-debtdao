@@ -14,6 +14,16 @@ Some of the checklists in this doc are for **C4 (🐺)** and some of them are fo
 
 # Contest setup
 
+## Installing
+We track remote remotes like Foundry and Chainlink via submodules so you will need to install those in addition to our repo itself If cloning you can run `git clone --recurse-submodules` Or if you already have repo installed you can run `git pull --recurse-submodules`
+
+
+## Testing
+We use foundry for testing. Follow installation guide on their repo.
+
+Then run `forge test`
+
+
 ## ⭐️ Sponsor: Provide contest details
 
 Under "SPONSORS ADD INFO HERE" heading below, include the following:
@@ -26,7 +36,7 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 - [x] Describe any novel or unique curve logic or mathematical models implemented in the contracts
 - [x] Does the token conform to the ERC-20 standard? In what specific ways does it differ?
 - [x] Describe anything else that adds any special logic that makes your approach unique
-- [ ] Identify any areas of specific concern in reviewing the code
+- [x] Identify any areas of specific concern in reviewing the code
 - [x] Add all of the code to this repo that you want reviewed
 
 
@@ -46,6 +56,7 @@ These are the most relevant sections for Cod4rena wardens.
 2. Lender repayment queue. We use the `ids` array in Line of Credit contract to prioritize lenders that were drawn down on first, must be paid back first.
 3. The Arbiter is a neutral third party that mediates conversations between all lenders and the borrower. They have priviliged access and are assumed to be honest at all times.
 4. The Arbiter can declare a borrower INSOLVENT if there is no collateral left in Escrow or Spigot. This lets all lenders know that whatever balance they have deposited into the Line of Credit will never be repaid.
+5. The Spgiot MUST take ownership of a revenue generating contract. There must be no other access points to the underlying contract. Scenarios are identified under Known Exploits in docs
 
 
 # Special Concerns For Audit
@@ -54,7 +65,7 @@ Since our Spigot takes ownership of another protocol/DAO's smart contracts to se
 
 
 ## SpigotedLine
-Our integration between Line of Credit and Spigot contracts. It owns the Spigot so important that it doesnt lose ownership of Spigot unless `releaseSpigot()` successfully executes. That it can properly manage and call Spigot contract. It must be able to trade tokens on Spigot to a credited token using 0x protocol. 
+Our integration between Line of Credit and Spigot contracts, inheritied by Line of Credit. It owns the Spigot so important that it doesnt lose ownership of Spigot unless `releaseSpigot()` successfully executes. That it can properly manage and call Spigot contract. It must be able to trade tokens on Spigot to a credited token using 0x protocol. 
 
 
 # Smart Contracts
@@ -65,7 +76,6 @@ Core contract responsible for:
 - Recording positions and accounting for the borrower and lenders
 - Define line of credit terms (oracle, arbiter, borrower, term length, interest rate, escrow and spigot collateral)
 - Coordinating Escrow, Spigot, and InterestRate modules 
-
 - external calls to - Oracle, InterestRate
 - Libraries - LineLib, CreditLib, CreditListLib
 
