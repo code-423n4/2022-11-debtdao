@@ -20,6 +20,16 @@ We use foundry for testing. Follow installation guide on their repo.
 
 Then run `forge test`
 
+## Failing Tests
+
+Test `TradeFailed` fails occasionally.
+
+```
+Failing tests:
+Encountered 1 failing test in contracts/tests/SpigotedLine.t.sol:SpigotedLineTest
+[FAIL. Reason: TradeFailed() Counterexample: calldata=0xd9be461e0000000000000000000000000000000000000000000000000000000000000001004189374bc6a7ef9db22d0e5604189374bc6a7ef9db22d0e5604189374bc6a8, args=[1, 115792089237316195423570985008687907853269984665640564039457584007913129640]] test_can_trade(uint256,uint256) (runs: 205, μ: 243309, ~: 283578)
+```
+
 ## Testnet Deployments
 We have deployed contracts to Gõrli testnet.
 These are contracts for our [deployed contracts](https://near-diploma-a92.notion.site/Deployed-Verified-Contracts-4717a0e2b231459e891e7e4565ec4e81)
@@ -50,26 +60,26 @@ These are the most relevant sections for Code4rena wardens.
 2. Lender repayment queue. We use the `ids` array in LineOfCredit.sol to prioritize Lenders that were drawn down on first. They must be paid back first.
 3. The Arbiter is a neutral third party that mediates conversations between all Lenders and the Borrower. They have privileged access and are assumed to be honest at all times.
 4. The Arbiter can declare a borrower INSOLVENT if there is no collateral left in the collateral Escrow or in the Spigot. This lets all Lenders know that whatever balance they have still deposited into the Line of Credit will never be repaid.
-5. The Spgiot MUST take ownership of a revenue generating contract. There must be no other access points to the underlying contract. Scenarios are identified under Known Exploits in docs
+5. The Spigot MUST take ownership of a revenue generating contract. There must be no other access points to the underlying contract. Scenarios are identified under Known Exploits in docs
 
 
-# Out of Scope For Audit
-| File                                                   | Lines |
-|--------------------------------------------------------|-------|
-| contracts/modules/credit/LineOfCredit.sol              | 587   |
-| contracts/modules/credit/SpigotedLine.sol              | 290   |
-| contracts/modules/credit/SecuredLine.sol               | 117   |
-| contracts/modules/credit/EscrowedLine.sol              | 73    |
-| contracts/modules/spigot/Spigot.sol                    | 229   |
-| contracts/modules/escrow/Escrow.sol                    | 129   |
-| contracts/modules/oracle/Oracle.sol                    | 30    |
-| contracts/modules/interest-rate/InterestRateCredit.sol | 84    |
-| contracts/utils/CreditLib.sol                          | 245   |
-| contracts/utils/LineLib.sol                            | 87    |
-| contracts/utils/CreditListLib.sol                      | 61    |
-| contracts/utils/EscrowLib.sol                          | 225   |
-| contracts/utils/SpigotLib.sol                          | 272   |
-| contracts/utils/MutualConsent.sol                      | 68    |
+# In Scope For Audit
+| File                                                   |
+|--------------------------------------------------------|
+| contracts/modules/credit/LineOfCredit.sol              |
+| contracts/modules/credit/SpigotedLine.sol              |
+| contracts/modules/credit/SecuredLine.sol               |
+| contracts/modules/credit/EscrowedLine.sol              |
+| contracts/modules/spigot/Spigot.sol                    |
+| contracts/modules/escrow/Escrow.sol                    |
+| contracts/modules/oracle/Oracle.sol                    |
+| contracts/modules/interest-rate/InterestRateCredit.sol |
+| contracts/utils/CreditLib.sol                          |
+| contracts/utils/LineLib.sol                            |
+| contracts/utils/CreditListLib.sol                      |
+| contracts/utils/EscrowLib.sol                          |
+| contracts/utils/SpigotLib.sol                          |
+| contracts/utils/MutualConsent.sol                      |
 
 
 # Special Concerns For Audit
