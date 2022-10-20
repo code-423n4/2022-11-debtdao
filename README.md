@@ -52,9 +52,25 @@ These are the most relevant sections for Code4rena wardens.
 4. The Arbiter can declare a borrower INSOLVENT if there is no collateral left in the collateral Escrow or in the Spigot. This lets all Lenders know that whatever balance they have still deposited into the Line of Credit will never be repaid.
 5. The Spgiot MUST take ownership of a revenue generating contract. There must be no other access points to the underlying contract. Scenarios are identified under Known Exploits in docs
 
+
 # Out of Scope For Audit
-1. Anything related to the Arbiter
-2. Anything related to the Oracle
+| File                                                   | Lines |
+|--------------------------------------------------------|-------|
+| contracts/modules/credit/LineOfCredit.sol              | 587   |
+| contracts/modules/credit/SpigotedLine.sol              | 290   |
+| contracts/modules/credit/SecuredLine.sol               | 117   |
+| contracts/modules/credit/EscrowedLine.sol              | 73    |
+| contracts/modules/spigot/Spigot.sol                    | 229   |
+| contracts/modules/escrow/Escrow.sol                    | 129   |
+| contracts/modules/oracle/Oracle.sol                    | 30    |
+| contracts/modules/interest-rate/InterestRateCredit.sol | 84    |
+| contracts/utils/CreditLib.sol                          | 245   |
+| contracts/utils/LineLib.sol                            | 87    |
+| contracts/utils/CreditListLib.sol                      | 61    |
+| contracts/utils/EscrowLib.sol                          | 225   |
+| contracts/utils/SpigotLib.sol                          | 272   |
+| contracts/utils/MutualConsent.sol                      | 68    |
+
 
 # Special Concerns For Audit
 ## Spigot 
@@ -165,7 +181,7 @@ EscrowedLine.sol is an *abstract* contract holding all the collateral of a Borro
 # MutualConsent (48 sloc)
 - Forked from https://github.com/IndexCoop/index-coop-smart-contracts/blob/1acec44229b3aaf4a40dad2095b0cc6accb8fbfc/contracts/lib/MutualUpgrade.sol
 - Essentially a 2/2 multisig baked into your contract
-- Ensures that two predefined addresse both sign a tx with the same inputs and then executes the function with those parameters. 
+- Ensures that two predefined addresses both sign a tx with the same inputs and then executes the function with those parameters. 
 
 
 # SpigotLib (212 sloc)
@@ -174,3 +190,16 @@ EscrowedLine.sol is an *abstract* contract holding all the collateral of a Borro
 
 # SpigotedLine.Lib (187 sloc
 - Stores functionality related to including Spigot in Line of Credit lifecycle
+
+
+# Out of Scope For Audit
+| File                                                   |
+|--------------------------------------------------------|
+| contracts/interfaces/*                                 |
+| contracts/modules/factories/*                          |
+| contracts/utils/SpigotedLineLib.sol                    |
+| contracts/utils/LineFactoryLib.sol                     |
+
+Includes:
+1. Anything related to the Arbiter
+2. Anything related to the Oracle
