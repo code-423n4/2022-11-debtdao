@@ -35,6 +35,10 @@ We have deployed contracts to Gõrli testnet.
 These are contracts for our [deployed contracts](https://near-diploma-a92.notion.site/Deployed-Verified-Contracts-4717a0e2b231459e891e7e4565ec4e81)
 [List of tokens that are priced by our dummy oracle](https://near-diploma-a92.notion.site/Test-Tokens-10-17-2afd16dde17c45eeba14b780d58ba28b) that u can use for interacting with Line Of Credit and Escrow contracts (you can use any token for Spigot revenue as long as it can be traded to a whitelisted token)
 
+### Slither
+
+NOTE: Slither does not currently work on the repo. If you find a workaround, please share in the discord.
+
 ## Contact Info
 Cod4rena discord channel for contest 
 https://discord.gg/bD4nnRwYPN
