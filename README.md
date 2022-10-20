@@ -1,3 +1,4 @@
+
 # Debt DAO contest details
 - $95,000 USDC main award pot
 - $5,000 USDC gas optimization award pot
@@ -6,6 +7,29 @@
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
 - Starts October 20, 2022 20:00 UTC
 - Ends October 27, 2022 20:00 UTC
+
+
+# Contest setup
+
+## Installing
+We track remote remotes like Foundry and Chainlink via submodules so you will need to install those in addition to our repo itself If cloning you can run `git clone --recurse-submodules` Or if you already have repo installed you can run `git pull --recurse-submodules`
+
+
+## Testing
+We use foundry for testing. Follow installation guide on their repo.
+
+Then run `forge test`
+
+## Testnet Deployments
+We have deployed contracts to Gõrli testnet.
+These are contracts for our [deployed contracts](https://near-diploma-a92.notion.site/Deployed-Verified-Contracts-4717a0e2b231459e891e7e4565ec4e81)
+[List of tokens that are priced by our dummy oracle](https://near-diploma-a92.notion.site/Test-Tokens-10-17-2afd16dde17c45eeba14b780d58ba28b) that u can use for interacting with Line Of Credit and Escrow contracts (you can use any token for Spigot revenue as long as it can be traded to a whitelisted token)
+
+## Contact Info
+Cod4rena discord channel for contest 
+https://discord.gg/bD4nnRwYPN
+
+
 
 ---
 # Background info
@@ -25,28 +49,25 @@ These are the most relevant sections for Code4rena wardens.
 1. We charge interest even if a Borrower hasn't drawn down any actual debt. This type of interest is the `fRate` that a Borrower DAO pays to have access to immediate liquidity. It SHOULD be below the `dRate` charged when the Borrower does have debt but does not explicitly have to be less.
 2. Lender repayment queue. We use the `ids` array in LineOfCredit.sol to prioritize Lenders that were drawn down on first. They must be paid back first.
 3. The Arbiter is a neutral third party that mediates conversations between all Lenders and the Borrower. They have privileged access and are assumed to be honest at all times.
-4. The Arbiter can declare a borrower INSOLVENT if there is no collateral left in the collateral Escrow or in the Spigot. This lets all Lenders know that whatever balance they have deposited into the Line of Credit will never be repaid.
-
+4. The Arbiter can declare a borrower INSOLVENT if there is no collateral left in the collateral Escrow or in the Spigot. This lets all Lenders know that whatever balance they have still deposited into the Line of Credit will never be repaid.
+5. The Spgiot MUST take ownership of a revenue generating contract. There must be no other access points to the underlying contract. Scenarios are identified under Known Exploits in docs
 
 # Out of Scope For Audit
 1. Anything related to the Arbiter
 2. Anything related to the Oracle
 
-
 # Special Concerns For Audit
 ## Spigot 
 Since the Spigot takes ownership of another protocol/DAO's smart contracts to secure their revenue streams (e.g. owning a Yearn vault to ensure vault fees repays Yearn's debt) we want to make sure that the Spigot can't get bricked locking their contract forever, that their contract can't be stolen from the Spigot and that revenue tokens are securely escrowed inside the Spigot for the Owner to claim.
 
-
 ## SpigotedLine
 Our integration between the Line of Credit and Spigot contracts. It owns the Spigot so it's important that it doesn't lose ownership of the Spigot (unless `releaseSpigot()` successfully executes) so that it can properly manage and call the Spigot contract. It must be able to trade revenue tokens captured by the Spigot to credit tokens owed to Lenders using 0x protocol. 
-
 
 # Smart Contracts
 
 ## LineOfCredit (478 sloc)
 LineOfCredit.sol is the core contract responsible for:
-
+- Inherited by SecuredLine.sol
 - Recording credit lines, positions and accounting for Borrowers and Lenders
 - Defining Line of Credit terms (Oracle, Arbiter, Borrower, term length, interest rate, escrow and spigot collateral)
 - Coordinating the Escrow, Spigot, and InterestRateCredit modules
@@ -56,8 +77,9 @@ LineOfCredit.sol is the core contract responsible for:
 
 
 ## SpigotedLine (247 sloc)
- - An integration between Spigot.sol and LineOfCredit.sol.
- - It owns the Spigot so it's important that it can properly manage and call Spigot.sol and doesn't lose ownership of it unless releaseSpigot()         successfully executes. 
+ - An integration between Spigot.sol and LineOfCredit.sol. 
+ - Inherited by SecuredLine.sol
+ - It owns the Spigot so it's important that it can properly manage and call Spigot.sol and doesn't lose ownership of it unless `releaseSpigot()` successfully executes. 
  - Manages a Spigot's configuration based on the health status of a Line of Credit
  - Trades a DAO's Revenue Tokens for Credit Tokens owed to lenders using 0x protocol
  - Stores excess revenue or trade slippage in 'unused' tokens for later use in repayment
@@ -69,7 +91,8 @@ LineOfCredit.sol is the core contract responsible for:
 
 
 ## EscrowedLine (60 sloc)
-EscrowedLine.sol is an abstract contract holding all the collateral of a Borrower.  
+EscrowedLine.sol is an *abstract* contract holding all the collateral of a Borrower.  
+- Inherited by SecuredLine.sol
  - It doesn't contain any external functions.
  - Allows an Arbiter to liquidate collateral if the Line of Credit's status is LIQUIDATABLE
  - Updates a Line of Credit's status based on the latest collateral ratio vs minimum collateral ratio (in Escrow.sol)
@@ -150,4 +173,4 @@ EscrowedLine.sol is an abstract contract holding all the collateral of a Borrowe
 
 
 # SpigotedLine.Lib (187 sloc
-- Stores functionality related to a Line of Credit which is secured by a Spigot 
+- Stores functionality related to including Spigot in Line of Credit lifecycle

@@ -68,7 +68,13 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
+# Build artifacts
+out
+build
+doc
+
 # dotenv environment variables file
+package-lock.jsons
 .env
 .env.test
 
@@ -82,6 +88,9 @@ typings/
 .nuxt
 dist
 
+# Git submodules to install
+lib
+
 # Gatsby files
 .cache/
 # Comment in the public line in if your project uses Gatsby and *not* Next.js
@@ -94,11 +103,17 @@ dist
 # Serverless directories
 .serverless/
 
-# FuseBox cache
-.fusebox/
+#Hardhat files
+cache
+artifacts
 
-# DynamoDB Local files
-.dynamodb/
+#dapp tools 
+hevm.libs.*
 
 # TernJS port file
 .tern-port
+# FuseBox cache
+.fusebox/
+ 
+# DynamoDB Local files
+.dynamodb/

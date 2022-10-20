@@ -1,0 +1,85 @@
+[profile.default]
+src = 'contracts'
+test = 'test'
+script = 'script'
+out = 'out'
+libs = [
+    'lib'
+]
+
+remappings = [
+    "forge-std/=lib/forge-std/src/",
+    "chainlink/=lib/chainlink/contracts/src/v0.8/",
+    "openzeppelin/=lib/openzeppelin-contracts/contracts/"
+]
+
+libraries = []
+
+cache = true
+cache_path = 'cache'
+broadcast = 'broadcast'
+allow_paths = []
+include_paths = []
+force = false
+evm_version = 'london'
+gas_reports = ['*']
+gas_reports_ignore = []
+auto_detect_solc = true
+offline = false
+optimizer = true
+optimizer_runs = 200
+verbosity = 0
+ignored_error_codes = [
+    1878,
+    5574,
+]
+fuzz_runs = 256
+invariant_runs = 256
+invariant_depth = 15
+invariant_fail_on_revert = false
+invariant_call_override = false
+ffi = false
+initial_balance = '0xffffffffffffffffffffffff'
+block_number = 1
+gas_limit = 9223372036854775807
+block_base_fee_per_gas = 0
+block_coinbase = '0x0000000000000000000000000000000000000000'
+block_timestamp = 1
+block_difficulty = 0
+memory_limit = 33554432
+extra_output = []
+extra_output_files = []
+fuzz_max_local_rejects = 1024
+fuzz_max_global_rejects = 65536
+names = false
+sizes = false
+via_ir = false
+no_storage_caching = false
+bytecode_hash = 'ipfs'
+sparse_mode = false
+build_info = false
+
+[profile.gorli]
+
+libraries = [
+     "contracts/utils/CreditLib.sol:CreditLib:0x079DBdF326754d07745061e4f70728Cf553817D0",
+    "contracts/utils/CreditListLib.sol:CreditListLib:0xC9643585fFde9Be2b4084776289A2ecB181C28E1",
+    "contracts/utils/LineLib.sol:LineLib:0x610858ec92822FCC78d0EF51e3434E5F4968ae66",
+    "contracts/utils/EscrowLib.sol:EscrowLib:0xfaffe74894e36C6534Cc13b73af015b5666b4EA9",
+    "contracts/utils/SpigotedLineLib.sol:SpigotedLineLib:0x910116b3FB14D968eAF69292F23EA52A456F4183",
+    "contracts/utils/SpigotLib.sol:SpigotLib:0xD40bf1DC5c9Ed959642443876d79fdE2Ff81196a",
+    "contracts/utils/LineFactoryLib.sol:LineFactoryLib:0xF3562A8970e5a4DE823D32AC11b761DDb9a167a3"
+]
+
+[profile.default.rpc_storage_caching]
+chains = 'all'
+endpoints = 'all'
+
+[fmt]
+line_length = 120
+tab_width = 4
+bracket_spacing = false
+int_types = 'long'
+func_attrs_with_params_multiline = true
+quote_style = 'double'
+number_underscore = 'preserve'
