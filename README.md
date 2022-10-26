@@ -1,7 +1,11 @@
 
 # Debt DAO contest details
-- $95,000 USDC main award pot
-- $5,000 USDC gas optimization award pot
+- Total Prize Pool: $115,500 USDC
+  - HM awards: $85,000 USDC
+  - QA report awards: $10,000 USDC
+  - Gas report awards: $5,000 USDC
+  - Judge + presort awards: $15,000 USDC
+  - Scout awards: $500 USDC
 - Join [C4 Discord](https://discord.gg/code4rena) to register
 - Submit findings [using the C4 form](https://code4rena.com/contests/2022-11-debt-dao-contest/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
