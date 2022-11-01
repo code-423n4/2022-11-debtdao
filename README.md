@@ -14,40 +14,11 @@
 
 
 # Contest setup
-
-## Installing
-We track remote remotes like Foundry and Chainlink via submodules so you will need to install those in addition to our repo itself If cloning you can run `git clone --recurse-submodules` Or if you already have repo installed you can run `git pull --recurse-submodules`
-
-
-## Testing
-We use foundry for testing. Follow installation guide on their repo.
-
-Then run `forge test`
-
-## Failing Tests
-
-Test `TradeFailed` fails occasionally.
-
-```
-Failing tests:
-Encountered 1 failing test in contracts/tests/SpigotedLine.t.sol:SpigotedLineTest
-[FAIL. Reason: TradeFailed() Counterexample: calldata=0xd9be461e0000000000000000000000000000000000000000000000000000000000000001004189374bc6a7ef9db22d0e5604189374bc6a7ef9db22d0e5604189374bc6a8, args=[1, 115792089237316195423570985008687907853269984665640564039457584007913129640]] test_can_trade(uint256,uint256) (runs: 205, μ: 243309, ~: 283578)
-```
-
-## Testnet Deployments
-We have deployed contracts to Gõrli testnet.
-These are contracts for our [deployed contracts](https://near-diploma-a92.notion.site/Deployed-Verified-Contracts-4717a0e2b231459e891e7e4565ec4e81)
-[List of tokens that are priced by our dummy oracle](https://near-diploma-a92.notion.site/Test-Tokens-10-17-2afd16dde17c45eeba14b780d58ba28b) that u can use for interacting with Line Of Credit and Escrow contracts (you can use any token for Spigot revenue as long as it can be traded to a whitelisted token)
-
-### Slither
-
-NOTE: Slither does not currently work on the repo. If you find a workaround, please share in the discord.
+Go to our [project repo](https://github.com/debtdao/Line-of-Credit/tree/2254b3e8a36110481a03e31e96874bd99538b4f6) and follow the instructions there  (commit hash: `e8aa08b44f6132a5ed901f8daa231700c5afeb3a`)
 
 ## Contact Info
 Cod4rena discord channel for contest 
 https://discord.gg/bD4nnRwYPN
-
-
 
 ---
 # Background info
@@ -82,13 +53,15 @@ These are the most relevant sections for Code4rena wardens.
 | contracts/modules/escrow/Escrow.sol                    |
 | contracts/modules/oracle/Oracle.sol                    |
 | contracts/modules/interest-rate/InterestRateCredit.sol |
+| contracts/modules/factories/LineFactory.sol            |
 | contracts/utils/CreditLib.sol                          |
 | contracts/utils/LineLib.sol                            |
 | contracts/utils/CreditListLib.sol                      |
 | contracts/utils/EscrowLib.sol                          |
 | contracts/utils/SpigotLib.sol                          |
+| contracts/utils/SpigotedLineLib.sol                    |
 | contracts/utils/MutualConsent.sol                      |
-
+| contracts/utils/LineFactoryLib.sol                     |
 
 # Special Concerns For Audit
 ## Spigot 
@@ -142,6 +115,11 @@ EscrowedLine.sol is an *abstract* contract holding all the collateral of a Borro
  - External calls to - Oracle.sol, InterestRateCredit.sol, EscrowedLine.sol, Spigot.sol, 0x protocol
  - Libraries - LineLib.sol, SpigotedLineLib.sol
 
+## LineFactory (179 sloc)
+- Deploys SecurdLine, Spigot, and Escrow contracts 
+- Has functions for default deployments and with custom config for borrower/lenders
+- After deploying SecuredLine's ensures that modules are configured properly and Line is ACTIVE
+
 ---
 
 # Escrow (114 sloc)
@@ -177,6 +155,7 @@ EscrowedLine.sol is an *abstract* contract holding all the collateral of a Borro
 - Purely calculates interest owed. LineOfCredit.sol is responsible for updating balances
 - Only allows LineOfCredit.sol to call it
 
+--- 
 
 # LineLib (79 sloc)
 - Stores basic functions for LineOfCredit e.g. health statuses and transferring tokens
