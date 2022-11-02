@@ -14,10 +14,10 @@
 
 
 # Contest setup
-Go to our [project repo](https://github.com/debtdao/Line-of-Credit/tree/2254b3e8a36110481a03e31e96874bd99538b4f6) and follow the instructions there  (commit hash: `e8aa08b44f6132a5ed901f8daa231700c5afeb3a`)
+Go to our [project repo](https://github.com/debtdao/Line-of-Credit/tree/audit/code4rena-2022-11-03) and follow the instructions there  (commit hash: `code4rena-2022-11-03`)
 
 ## Contact Info
-Cod4rena discord channel for contest 
+Code4rena discord channel for contest 
 https://discord.gg/bD4nnRwYPN
 
 ---
