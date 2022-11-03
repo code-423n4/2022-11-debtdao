@@ -12,6 +12,11 @@
 - Starts November 3, 2022 20:00 UTC
 - Ends November 10, 2022 20:00 UTC
 
+## C4udit
+
+The C4udit output for the contest can be found [here](https://gist.github.com/Picodes/e5731343685a6e6349e972a9a4ad9bce).
+
+*Note for C4 wardens: Anything included in the C4udit output is considered a publicly known issue and is ineligible for awards.*
 
 # Contest setup
 Go to our [project repo](https://github.com/debtdao/Line-of-Credit/tree/audit/code4rena-2022-11-03) and follow the instructions there  (commit hash: `code4rena-2022-11-03`)
