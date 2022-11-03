@@ -195,13 +195,5 @@ EscrowedLine.sol is an *abstract* contract holding all the collateral of a Borro
 
 
 # Out of Scope For Audit
-| File                                                   |
-|--------------------------------------------------------|
-| contracts/interfaces/*                                 |
-| contracts/modules/factories/*                          |
-| contracts/utils/SpigotedLineLib.sol                    |
-| contracts/utils/LineFactoryLib.sol                     |
-
-Includes:
 1. Anything related to the Arbiter
 2. Anything related to the Oracle
