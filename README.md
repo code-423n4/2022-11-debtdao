@@ -56,6 +56,7 @@ These are the most relevant sections for Code4rena wardens.
 | contracts/modules/credit/EscrowedLine.sol              |
 | contracts/modules/spigot/Spigot.sol                    |
 | contracts/modules/escrow/Escrow.sol                    |
+| contracts/modules/oracle/Oracle.sol                    |
 | contracts/modules/interest-rate/InterestRateCredit.sol |
 | contracts/modules/factories/LineFactory.sol            |
 | contracts/utils/CreditLib.sol                          |
@@ -146,7 +147,7 @@ EscrowedLine.sol is an *abstract* contract holding all the collateral of a Borro
  - Libraries - SpigotLib.sol, LineLib.sol
 
 
-# Oracle (Out of Scope - 24 sloc)
+# Oracle (24 sloc)
 - A wrapper contract to simplify integration with Chainlink FeedRegistry
 - Returns all token prices in USD 8-decimal denomination
 
@@ -154,7 +155,7 @@ EscrowedLine.sol is an *abstract* contract holding all the collateral of a Borro
 - Libraries - Chainlink Denominations
 
 
-# InterestRateCredit(72 sloc)
+# InterestRateCredit (72 sloc)
 - Stores interest rates and the last time interest was accrued for individual Lender positions on a Line of Credit
 - Purely calculates interest owed. LineOfCredit.sol is responsible for updating balances
 - Only allows LineOfCredit.sol to call it
@@ -189,10 +190,10 @@ EscrowedLine.sol is an *abstract* contract holding all the collateral of a Borro
 - Stores functionality for claiming revenue, updating revenue splits, updating stakeholder addresses and all other Spigot functions
 
 
-# SpigotedLine.Lib (187 sloc
+# SpigotedLine.Lib (187 sloc)
 - Stores functionality related to including Spigot in Line of Credit lifecycle
 
 
 # Out of Scope For Audit
 1. Anything related to the Arbiter
-2. Anything related to the Oracle
+2. While the Oracle contract is in scope, anything related to the Oracle within the system and its privileged access, reliability, honest answers, etc. are out of scope.
