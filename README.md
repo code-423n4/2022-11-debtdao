@@ -196,4 +196,4 @@ EscrowedLine.sol is an *abstract* contract holding all the collateral of a Borro
 
 # Out of Scope For Audit
 1. Anything related to the Arbiter
-2. While the Oracle contract is in scope, anything related to the Oracle within the system and its privileged access, reliability, honest answers, etc. are out of scope.
+2. While the Oracle contract is in scope, anything related to the Oracle within the system and its privileged access, reliability, honest answers, etc. is out of scope.
