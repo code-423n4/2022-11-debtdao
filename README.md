@@ -56,7 +56,6 @@ These are the most relevant sections for Code4rena wardens.
 | contracts/modules/credit/EscrowedLine.sol              |
 | contracts/modules/spigot/Spigot.sol                    |
 | contracts/modules/escrow/Escrow.sol                    |
-| contracts/modules/oracle/Oracle.sol                    |
 | contracts/modules/interest-rate/InterestRateCredit.sol |
 | contracts/modules/factories/LineFactory.sol            |
 | contracts/utils/CreditLib.sol                          |
@@ -147,7 +146,7 @@ EscrowedLine.sol is an *abstract* contract holding all the collateral of a Borro
  - Libraries - SpigotLib.sol, LineLib.sol
 
 
-# Oracle (24 sloc)
+# Oracle (Out of Scope - 24 sloc)
 - A wrapper contract to simplify integration with Chainlink FeedRegistry
 - Returns all token prices in USD 8-decimal denomination
 
