@@ -1,0 +1,1198 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-Q4-2022 / debt-dao-nov3
+==============================================================
+
+[10/18/2022 17:10] kartoonjoy (pinned)
+👋 Hello and welcome to the contest channel for the $100K USDC **Debt DAO** contest!
+
+📆 Contest opens 11/03/2022 20:00 (20:00 UTC) and runs through 11/10/2022 21:00 (20:00 UTC) (7 days).
+
+Please give a warm welcome to the Debt DAO team, particularly @cwalk, @kiba and @Bob, who will be available for questions either here in the channel or via DM.
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this contest, consider enabling notifications for this channel. 🐺 ⏰
+
+Contest Page: https://code4rena.com/contests/2022-11-debt-dao-contest
+
+
+[10/18/2022 17:12] codingnamekiki
+l don’t want to be in debt again
+
+{Reactions}
+🔥 (7) 
+
+[10/18/2022 17:12] codingnamekiki
+:sad_cat:
+
+
+[10/18/2022 18:35] kartoonjoy
+Pinned a message.
+
+
+[10/19/2022 19:09] bobzedf
+Anyone looking to get a head start can check out our functional and technical docs at https://docs.debtdao.finance/overview/what-is-debt-dao
+
+{Embed}
+https://docs.debtdao.finance/overview/what-is-debt-dao
+What is Debt DAO?
+Code4rena - ARCHIVE-Q4-2022 - debt-dao-nov3 [1031975563239374968].txt_Files/cwsIQx8DBSAhxOnGj21w-C4AE1.png
+
+{Reactions}
+❤️ (8) 
+
+[10/19/2022 19:40] cwalk_19
+Happy to answer any questions behind rationale behind design decisions, what went into the logic, etc
+
+{Reactions}
+👍 (4) 
+
+[10/20/2022 19:05] itsmetechjay
+Hi all - the contest start date has moved to November 3rd.  The site will be updated shortly.
+
+{Reactions}
+PU_FeelsWowMan (9) C4Keycap (6) ❤️ 
+
+[10/22/2022 01:14] chaduke3730
+thanks.
+
+
+[10/29/2022 09:16] wawrdog
+Hi Gents, long time no speak
+
+
+[10/29/2022 09:16] wawrdog
+Which contracts are you guys putting up for this one?
+
+
+[10/29/2022 09:40] codingnamekiki
+This contest haven’t started yet. It starts on 3rd November, so contracts are provided then.
+
+
+[10/31/2022 13:52] cwalk_19
+Hello @WawrDog. If you want to get a head start taking a look at our code, we will have the repos found at this link in the contest: https://github.com/debtdao/Line-of-Credit
+
+{Embed}
+https://github.com/debtdao/Line-of-Credit
+GitHub - debtdao/Line-of-Credit
+Contribute to debtdao/Line-of-Credit development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q4-2022 - debt-dao-nov3 [1031975563239374968].txt_Files/Line-of-Credit-C9B84
+
+
+[10/31/2022 14:04] codingnamekiki
+Yes count me in as well
+
+{Reactions}
+spigotpepe 
+
+[10/31/2022 14:04] codingnamekiki
+:PU_FeelsBongoMan:
+
+
+[10/31/2022 14:13] ladboy233
+:hi5:
+
+
+[10/31/2022 17:29] chaduke3730
+hey
+
+
+[10/31/2022 17:34] koolexc
+Heyyy
+
+
+[10/31/2022 17:34] koolexc
+Count me in!
+
+
+[10/31/2022 17:34] koolexc
+very much looking forward to this
+
+{Reactions}
+spigotpepe 
+
+[10/31/2022 20:48] wawrdog
+Good man ty
+
+{Reactions}
+spigotpepe 
+
+[11/01/2022 07:22] codingnamekiki
+@cwalk can you accept my friend request, so l can ask questions ty
+
+
+[11/01/2022 07:23] codingnamekiki
+:catvibe:
+
+
+[11/01/2022 13:46] lukejohn_
+cannot wait for it
+
+{Reactions}
+spigotpepe 
+
+[11/01/2022 16:39] cwalk_19
+Accepted ser. DM away
+
+
+[11/01/2022 22:54] chaduke3730
+reading doc now
+
+
+[11/01/2022 23:21] chaduke3730
+what is the difference between Revenue Tokens and Credit Tokens, can you give an example for each?
+
+
+[11/01/2022 23:22] chaduke3730
+The former is a token for collateral? The later is the token that one can borrow - a stable coin?
+
+
+[11/02/2022 03:00] kibagateaux (pinned)
+https://docs.debtdao.finance/glossary
+
+{Embed}
+https://docs.debtdao.finance/glossary
+Glossary
+This section lists frequently seen terminology in our doc and in the app.  Spigot related terms below are defined in the context of their usage in a Spigoted Line of Credit.
+Code4rena - ARCHIVE-Q4-2022 - debt-dao-nov3 [1031975563239374968].txt_Files/EriJTsWGcUdSR6GV13tn-1DBB5.png
+
+
+[11/02/2022 03:26] chaduke3730
+thanks.
+
+
+[11/02/2022 03:26] chaduke3730
+alot
+
+
+[11/02/2022 03:27] chaduke3730
+@kiba
+
+{Reactions}
+👍 
+
+[11/02/2022 04:20] chaduke3730
+Would depositAndClose always close the first line ?
+
+
+[11/02/2022 08:52] bobzedf
+depositAndClose() allows a Borrower to close an individual credit line.  
+
+The FIFO repayment queue ensures that credit lines are repaid (partially or fully/closed) in the order in which they were originally drawn down by a Borrower.  
+
+So whenever a Borrower deposits to repay, those funds are allocated to the first credit line (identified by an 'id') in the queue.
+
+{Reactions}
+debtdaoheartsingle 
+
+[11/02/2022 08:56] bobzedf
+**Debt DAO team Office hours (UTC)**
+
+We can more/less say that our office hours will be 0800 - 0100/0200 UTC (the clocks go back 1 hr this coming weekend in the USA).
+
+That's not a guarantee but we will do our best!  If you see us online just try.
+
+
+[11/02/2022 09:29] aphak5010
+Hey I'd like to know if all contracts from the repository are going to be in scope for the contest 🙂
+
+
+[11/02/2022 09:45] bobzedf
+This will be clarified before the contest starts.   @kiba
+
+
+[11/02/2022 12:20] kibagateaux
+There are a couple contracts that aren't in scope like /modules/factories/ModuleFactory.sol but basically everything is included
+
+{Reactions}
+👍 
+
+[11/02/2022 12:20] aphak5010
+Ok, thanks a lot👍
+
+
+[11/02/2022 12:41] itsmetechjay
+Pinned a message.
+
+
+[11/02/2022 14:31] chaduke3730
+@BobGot it thanks alot
+
+
+[11/03/2022 20:04] aphak5010
+`contracts/utils/SpigotedLineLib.sol`appears in "In scope" section as well as in "Out of scope" section. I believe there is a mistake
+
+
+[11/03/2022 20:08] bobzedf
+It should be in scope.  We'll confirm soonest but assume that it is.
+
+{Reactions}
+👍 
+
+[11/03/2022 20:10] thepicodes (pinned)
+**Automated findings:** https://gist.github.com/Picodes/e5731343685a6e6349e972a9a4ad9bce
+
+{Reactions}
+🙏 (2) 
+
+[11/03/2022 20:17] liveactionllamac4 (pinned)
+Wardens, please note that c4udit output has been posted above and added to pinned posts. These are considered publicly known issues and are not eligible for awards.
+
+**Automated findings:** https://gist.github.com/Picodes/e5731343685a6e6349e972a9a4ad9bce
+
+This will also be linked in the contest README file shortly.
+
+
+[11/03/2022 20:17] liveactionllamac4
+Pinned a message.
+
+
+[11/03/2022 20:17] liveactionllamac4
+Pinned a message.
+
+
+[11/03/2022 20:25] bobzedf
+@Jay | C4 SpigotedLineLib.sol is 100$ ins cope.  Please amend the readme.  Thanks
+
+@Aphak5010
+
+{Reactions}
+✅ 
+
+[11/03/2022 21:20] bobzedf
+Hi everyone.
+
+Here’s a few words about your Sponsors.
+
+@kiba is a co-founder of Debt DAO and leads our Engineering and Product efforts as well as other founder stuff.  He’s been full time in DAOs since 2018.
+
+@cwalk  is a co-founder and leads Business Development and more generally all our Client and Partner Relationships and other founder stuff.  A converted TardFi from Wall Street credit structuring and full time in DeFi since before *that* 2020 Summer.
+
+HodlCaulfield#0888 is one of our senior engineers, focused right now on leading borrower proof of concepts for implementing our Spigot contract for trustless lending.
+
+@Bob is just Bob and does a bit of everything, except coding 😉
+
+Looking forward to fielding questions from you.
+
+{Reactions}
+👌🏻 👏🏻 
+
+[11/03/2022 21:35] liveactionllamac4
+Just to follow-up here on the conversation above, after discussions with the sponsor, the Out of Scope section in the readme has been corrected.
+
+{Reactions}
+thankyou (2) 
+
+[11/03/2022 23:50] pavankv
+Where is contract file, ??
+
+
+[11/03/2022 23:56] pavankv
+Only 3 files is here no contract s
+
+
+[11/03/2022 23:58] neko_nyaa
+README.md awaits your attention
+
+
+[11/04/2022 00:00] pavankv
+https://github.com/debtdao/Line-of-Credit/tree/master/contracts/modules/credit
+
+{Embed}
+https://github.com/debtdao/Line-of-Credit/tree/master/contracts/modules/credit
+Line-of-Credit/contracts/modules/credit at master · debtdao/Line-of...
+Contribute to debtdao/Line-of-Credit development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q4-2022 - debt-dao-nov3 [1031975563239374968].txt_Files/Line-of-Credit-30DA1
+
+
+[11/04/2022 00:00] pavankv
+Is this..?
+
+
+[11/04/2022 00:03] pavankv
+..
+
+
+[11/04/2022 00:20] pavankv
+Anyone please ??
+
+
+[11/04/2022 00:32] liveactionllamac4
+I would recommend reading through the contest readme, especially this section: https://github.com/code-423n4/2022-11-debtdao#contest-setup
+
+
+[11/04/2022 00:35] pavankv
+Yes contests setup go our project means this: https://github.com/debtdao/Line-of-Credit/tree/master/contracts/modules/credit
+
+{Embed}
+https://github.com/debtdao/Line-of-Credit/tree/master/contracts/modules/credit
+Line-of-Credit/contracts/modules/credit at master · debtdao/Line-of...
+Contribute to debtdao/Line-of-Credit development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q4-2022 - debt-dao-nov3 [1031975563239374968].txt_Files/Line-of-Credit-30DA1
+
+
+[11/04/2022 00:49] birdy0219
+"Go to our project repo and follow the instructions there ***(commit hash: code4rena-2022-11-03)***"
+
+
+[11/04/2022 00:49] birdy0219
+Clicking the ***project repo*** link in that sentence takes you directly to the commit:
+https://github.com/debtdao/Line-of-Credit/tree/audit/code4rena-2022-11-03
+
+{Embed}
+https://github.com/debtdao/Line-of-Credit/tree/audit/code4rena-2022-11-03
+GitHub - debtdao/Line-of-Credit at audit/code4rena-2022-11-03
+Contribute to debtdao/Line-of-Credit development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q4-2022 - debt-dao-nov3 [1031975563239374968].txt_Files/Line-of-Credit-30DA1
+
+
+[11/04/2022 00:50] pavankv
+Ok is this file right. Got it thanks for your response.
+
+{Reactions}
+🙏 
+
+[11/04/2022 00:52] birdy0219
+No probs, now go find a bunch of cool vulns! :peepoCoffee:
+
+{Reactions}
+🔥 (4) 
+
+[11/04/2022 06:08] Phaxsam#8129
+On we go now!!
+
+
+[11/04/2022 07:58] bobzedf
+gm, wardens
+
+
+[11/04/2022 07:59] codingnamekiki
+:PU_FeelsBongoMan:
+
+
+[11/04/2022 10:16] dinesh11g
+few sol files doesn't exists, can we report this as bug
+
+{Reactions}
+🤔 
+
+[11/04/2022 10:22] dsubd1subd2
+docs just incredibly great here
+
+{Reactions}
+💯 (3) 🙏 
+
+[11/04/2022 10:45] .nalus
+Whats with the ooooors in Spigot 😄
+
+
+[11/04/2022 10:47] dinesh11g
+@Bob check DM
+
+{Reactions}
+C4Keycap 
+
+[11/04/2022 11:13] eyexploit
+does anyone find some!!
+
+{Reactions}
+👀 
+
+[11/04/2022 15:16] .nalus
+any sponsor online?
+
+
+[11/04/2022 15:21] bobzedf
+Yes, go ahead please
+
+
+[11/04/2022 15:22] .nalus
+i dmed you
+
+
+[11/04/2022 15:23] carlitox477
+Is the oracle in the scope or not? At the end of C4 contest it says that it is not, but at the beginning it says the contrary
+
+
+[11/04/2022 15:32] itsmetechjay
+@HodlCaulfield 🙂
+
+
+[11/04/2022 15:54] hodlcaulfield
+🙏
+
+
+[11/04/2022 16:00] bobzedf
+Where does it say the oracle is in scope?  Pls send a screenshot.  For this contest, Oracle and Arbiter stuff is out of scope.
+
+
+[11/04/2022 16:11] codingnamekiki
+l think, he meant that https://prnt.sc/67NgBlHrhHHH
+
+{Embed}
+https://prnt.sc/67NgBlHrhHHH
+Screenshot
+Captured with Lightshot
+Code4rena - ARCHIVE-Q4-2022 - debt-dao-nov3 [1031975563239374968].txt_Files/63a_F96rQ_K7gGOiTRj_kw-290E5.png
+
+
+[11/04/2022 16:14] bobzedf
+OK it was included I think just for info but it's out of scope.  Sorry for the confusion.
+
+
+[11/04/2022 16:17] codingnamekiki
+No worries, ye it is kinda confusing. That it's in the scope contracts and at the same time at the bottom it says it's not in scope.
+
+{Reactions}
+🙏 
+
+[11/04/2022 16:18] codingnamekiki
+:PU_FeelsBongoMan:
+
+
+[11/04/2022 16:29] koolexc
+Does the lender get fRate all the time for whatever remaining funds not used by the borrower?
+
+
+[11/04/2022 16:32] rvierdiiev
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2022 - debt-dao-nov3 [1031975563239374968].txt_Files/image-B8E23.png
+
+
+[11/04/2022 16:32] koolexc
+When speaking about a Line of Credit, What's the difference between insolvent and impaired? I understood that when it is insolvent , it is liquidation failed to be done. what could be a reason of this?
+
+
+[11/04/2022 16:33] rvierdiiev
+no, it's included in the scope, i provided screenshot above
+
+
+[11/04/2022 16:34] bobzedf
+Oracle and Arbiter are out of scope.  The inclusion of that contract was an oversight.
+
+
+[11/04/2022 16:35] codingnamekiki
+It’s not a big deal, after all the oracle contract has only one function 💀
+
+{Reactions}
+Kek 
+
+[11/04/2022 16:41] bobzedf
+As it's coded today, the status of a Line of Credit can be one of uninitialized, active, liquidatable, repaid or insolvent.
+
+Impaired is not an official status but obviously if that word is used it means there's a problem, a doubt that full repayment can be made of principal and interest.
+
+Starting in reverse with the INSOLVENT status, this will be declared by an Arbiter if a Borrower is permanently incapable of repaying debt AFTER actions were taken when the status is LIQUIDATABLE.
+
+If the status is LIQUIDATABLE (for whatever reason), then there are 3 ways a Lender can recover funds (depending on what contracts are deployed/what terms agreed between parties).  We've an explainer on this here: https://docs.debtdao.finance/products/line-of-credit/loan-impairment-and-lender-recourse
+
+If you need further assistance, please ask.
+
+
+[11/04/2022 17:18] cwalk_19
+the fRate (facility rate) is applied only when the borrower does not use the funds deposited into the LoC contract by a lender. once the borrower draws down on the deposits into the LoC, the dRate (drawn rate) is charged
+
+
+[11/04/2022 17:19] cwalk_19
+so in short.. yes, the lender gets the fRate on remaining funds not used by the borrower @Koolex
+
+
+[11/04/2022 17:29] bobzedf
+Thanks!  I missed that one!
+
+
+[11/04/2022 17:37] koolexc
+Thank you guys. @Bob @cwalk 
+What if the borrower doesn't need the remaining funds anymore? Is there a business logic that covers this case or is it fixed upon the agreement in the first place and can't be changed later?
+
+{Reactions}
+👆 
+
+[11/04/2022 17:48] jumpdest7d
+So the fRate is like a punitive fee on funds provisioned for the borrower but not consumed by the same?
+
+
+[11/04/2022 17:53] bobzedf
+Think of it as a reward for the Lender for making available capital (to cover its opportunity cost) and the cost of the option premium to the Borrower of having the capital available.
+
+
+[11/04/2022 18:08] jumpdest7d
+Thank you! That clears it up 🙌🙌
+
+
+[11/04/2022 18:49] cwalk_19
+if they don't need the remaining funds anymore, they can call close () function. 
+
+to your point about if it is fixed or can be changed later, a borrower could theoretically negotiate with a lender and change the fRate to a lower rate via setRates function
+
+{Reactions}
+👍🏻 (2) 
+
+[11/04/2022 18:50] cwalk_19
+yes precisely. that's the logic behind it
+
+{Reactions}
+👍 
+
+[11/04/2022 18:58] koolexc
+Thank you. Clear now👌
+
+{Reactions}
+spigotpepe 
+
+[11/04/2022 19:30] dravee
+Thanks for flagging this, this is indeed a confusion, as it was indeed also put in the out of scope section. It'll be clarified
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2022 - debt-dao-nov3 [1031975563239374968].txt_Files/unknown-128C4.png
+
+
+[11/04/2022 20:10] kibagateaux
+For Oracle we want to find bugs in the Oracle contract but we aren't concerned with "bugs" related to the Oracle within our system and it's privileged access, reliability, honest answers, etc.
+
+{Reactions}
+👍 (2) 👀 
+
+[11/04/2022 21:05] aphak5010
+Can EscrowedLine and SpigotedLine be used on their own or is only SecuredLine used which inherits from both EscrowedLine and SpigotedLine?
+
+
+[11/04/2022 23:37] chaduke3730
+why is the cratio calculated as ((collateralValue*10**5/debtValue) + 5 )/10?
+
+
+[11/05/2022 00:34] adriro
+hi everyone! any dev from the team I could dm?
+
+
+[11/05/2022 06:57] ch_301
+@Bob Hi. I DMed you. could you check please?
+
+
+[11/05/2022 07:00] bobzedf
+GM wardens.  I’ll be responding to questions that I can respond to once I’m up and running here in  Europe.
+
+{Reactions}
+hi5 (2) 
+
+[11/05/2022 07:38] bobzedf
+You could deploy and Escrowed Line of Credit or a Spigoted Line of Credit on their own.  So, yes is the answer.
+
+You could even deploy an unsecured Line of Credit for some use cases where you perceive no credit risk but we don't advise this and we make this clear in our docs (Gitbook).
+
+We anticipate that mainly Secured Lines will be deployed and this gives the option of backing up the security provided by the Spigot with a more traditional collateral approach via the Escrow contract.
+
+{Reactions}
+👍 
+
+[11/05/2022 07:51] bobzedf
+I've replied
+
+{Reactions}
+❤️ 
+
+[11/05/2022 07:52] bobzedf
+If you're still around then you can DM me now.
+
+
+[11/05/2022 10:49] jumpdest7d
+@Bob DMing you shortly, thank you!
+
+{Reactions}
+🔥 
+
+[11/05/2022 12:42] koolexc
+Respect for the well and comprehensive documentation done !
+
+{Reactions}
+🙏 
+
+[11/05/2022 12:44] jumpdest7d
+100% agree - the intro to credit mechanisms was really helpful too. Nice work!
+
+{Reactions}
+👌🏻 🙏 
+
+[11/05/2022 15:23] kibagateaux
+They could be used on their own. Escrowed is intentionally abstract so people don't use it alone and spigotedLine can technically be deployed alone too but we only have SecuredLine in our factory contract for users to deploy
+
+{Reactions}
+🙏 
+
+[11/05/2022 15:24] kibagateaux
+We get ratio of collateral/debt. We return collateral in 4 decimals so we multiply by 10**5 and then +5 /10 rounds up the last decimal and cuts it off
+
+{Reactions}
+👌 
+
+[11/05/2022 15:25] aphak5010
+Thanks 🙂
+
+
+[11/05/2022 15:44] koolexc
+I have a question, Who can I DM atm?
+
+
+[11/05/2022 15:52] bobzedf
+go ahead with me
+
+{Reactions}
+👍🏻 
+
+[11/05/2022 15:54] koolexc
+Thanks. I just did
+
+
+[11/05/2022 19:40] cryptphi
+how do lenders and borrow agree to terms? Is there a separate contract for that?
+
+
+[11/05/2022 19:50] jumpdest7d
+They agree out-of-band and then use the mutualConsentById modifier on ILineOfCredit.setRates to capture an approval signature from both parties.
+
+
+[11/05/2022 19:51] jumpdest7d
+The agreement is captured through the combined signature of borrower and lender, and this must be done before the rates can be set.
+
+
+[11/05/2022 19:52] bobzedf
+That's a pretty good recap!
+
+{Reactions}
+🙌 
+
+[11/05/2022 19:53] jumpdest7d
+Thanks @Bob !
+
+
+[11/05/2022 19:53] bobzedf
+I can point you to a more detailed 'business write up' of that here:
+
+https://docs.debtdao.finance/products/line-of-credit/creating-a-line-of-credit
+and
+https://docs.debtdao.finance/products/line-of-credit/core-lending-operations (the lender adds credit part)
+
+
+[11/05/2022 19:54] cryptphi
+cool, thanks
+
+
+[11/05/2022 19:54] jumpdest7d
+Also see LineOfCredit.addCredit - it uses the modifier too 👍
+
+
+[11/05/2022 19:58] bobzedf
+At the moment it's right that there's offline agreements needed but this will gradually change as the MarketPlace evolves, pools, delegate etc.
+
+It's possible in an early version that pre-deployed Lines will be available and a Lender can pick and choose and then simply addCredit() to complete the 2/2 of mutual consent.
+
+For sure like all novel stuff there will be some high touch focus, especially around the Spigot's control of Revenue Contracts but once that initial work is done and tested then that Spigot/Revenue contract can be reused for n Lines of Credit.  The same for a collateral escrow.
+
+{Reactions}
+👍 (2) 
+
+[11/05/2022 20:03] bobzedf
+That's the main mutual consent function.  Before that a Line can be deployed by a Borrower with terms x, y and z.  That's like an empty shell.  A Lender then calls addCredit() with those terms x, y, z whatever and executes the 2/2 mutual consent in order to create the first credit line id on the Line of Credit facility.
+
+LineOfCredit.setRates is to change rates on an already ACTIVE LIne
+
+increaseCredit() is for a Lender to add more credit (I.e. deposit more) to an existing credit line id.
+
+All these 3 require mutual consent.
+
+{Reactions}
+👍 
+
+[11/05/2022 20:04] bobzedf
+Ok Wardens I'm signing off for today.  Other team members should be available but if you don't see them and you see me you can still DM me.  Otherwise I'll be back here 0800 UTC Sunday.
+
+{Reactions}
+👌 🙏 
+
+[11/05/2022 20:08] mostarz93
+Feel free to lob questions at me!
+
+{Reactions}
+chefskiss 
+
+[11/05/2022 20:12] chaduke3730
+@BobThanks.
+
+
+[11/06/2022 10:42] koolexc
+I'm trying to use console.log to print out values but it is not working
+`Compiler run failed
+error[7576]: DeclarationError: Undeclared identifier.`
+Usually I use this and it works. is there a configuration of something in foundry that disables this?
+
+
+[11/06/2022 10:51] bobzedf
+gm.  @mostarz93 or another team member can address this point but please wait a few hours until they're up and able on the other side of the pond.
+
+{Reactions}
+👍🏻 
+
+[11/06/2022 10:58] koolexc
+Just figured out how to resolve the issue. Thank you!
+
+{Reactions}
+👍🏻 
+
+[11/06/2022 11:16] perseverancesuccess2021
+@Bob @kiba  I sent you a DM. Please check. Thank you
+
+
+[11/06/2022 11:24] bobzedf
+Pls accept my friend request so I can set up a DM group.  We're doing that so as to manage the Q&A as efficiently as posssible.  THANKS
+
+
+[11/06/2022 12:28] perseverancesuccess2021
+Hi Bob, yes, I accepted the request. Thank you for your support
+
+{Reactions}
+🙏 
+
+[11/06/2022 21:24] immeas
+```
+        require(revenueContract != address(this));
+```
+noooo, i wanted a Spigouroborot!
+
+
+[11/07/2022 00:04] kibagateaux
+No, we use it too during development
+
+
+[11/07/2022 09:31] 0x1f8b
+ModuleFactory.sol is not under scope?
+
+
+[11/07/2022 10:28] bobzedf
+@kiba pls confirm.  Thanks
+
+
+[11/07/2022 10:30] 0x1f8b
+It doesn't appear in the scope, but seems weird to me because it's the unique file that is not in the scope, and is not a big one
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2022 - debt-dao-nov3 [1031975563239374968].txt_Files/image-3825D.png
+
+
+[11/07/2022 14:03] kibagateaux
+Correct
+
+
+[11/07/2022 14:04] kibagateaux
+It's basically only 2 lines of code
+
+
+[11/07/2022 17:02] perseverancesuccess2021
+Hello, I have a question. @kiba  In the POC section, it see that it is asked to provide Github link. But Github access is granted based on username. How can I report and use Github? I can use the Google_Drive link, but of course it is not as convenient as Github for the sponsors or judge to check.
+
+{Reactions}
+👍 
+
+[11/07/2022 17:18] liveactionllamac4
+The instructions here may be of help for your question: https://docs.code4rena.com/roles/wardens/submission-policy#how-to-include-a-proof-of-concept
+
+
+[11/07/2022 21:12] ladboy233
+the project really takes security seriously
+
+{Reactions}
+🙏 (5) spigotpepe 
+
+[11/07/2022 21:12] ladboy233
+the halborn audit just completes at the end of august lol
+
+
+[11/08/2022 09:15] trust90
+We all know C4 finds issues audit firms miss :4739_Skeletor:
+
+
+[11/08/2022 10:01] trust90
+Anyone available for DM?
+
+
+[11/08/2022 11:35] bobzedf
+Pls go ahead.
+
+
+[11/08/2022 13:24] perseverancesuccess2021
+Great! Thank you very much for your help. I found it helpful.
+
+{Reactions}
+hi5 
+
+[11/08/2022 15:05] kibagateaux
+hello I'm available for questions
+
+{Reactions}
+❤️ 
+
+[11/09/2022 01:30] ladboy233
+https://docs.debtdao.finance/developers/edge-cases-and-risk-situations
+
+{Embed}
+https://docs.debtdao.finance/developers/edge-cases-and-risk-situations
+Edge Cases and Risk Situations
+Code4rena - ARCHIVE-Q4-2022 - debt-dao-nov3 [1031975563239374968].txt_Files/tvH8YbbcGMn6jmQi9Jvf-CBF5F.png
+
+
+[11/09/2022 01:30] ladboy233
+Are these vector explicitly out of scope?
+
+
+[11/09/2022 02:05] kibagateaux
+yes
+
+
+[11/09/2022 02:06] kibagateaux
+these are most of the externally caused exploits. we dont mention things like arbiter having ability to add toxic assets as collateral or whatever because thats an inherent risk of our contracts
+
+{Reactions}
+👍 
+
+[11/09/2022 13:36] ladboy233
+ok thanks!
+
+
+[11/09/2022 13:48] kibagateaux
+gmgm
+
+{Reactions}
+🌄 (3) 
+
+[11/09/2022 23:21] pedr02b2
+is there someone i can message please and discuss soemthing with quickly
+
+
+[11/09/2022 23:23] kibagateaux
+hi
+
+
+[11/09/2022 23:24] pedr02b2
+oh hey please can i send you quick DM
+
+{Reactions}
+👍 
+
+[11/10/2022 13:45] he1m
+Hey, who can I ask question from?
+
+
+[11/10/2022 13:54] bobzedf
+Go ahead
+
+
+[11/10/2022 14:03] kibagateaux
+please
+
+
+[11/10/2022 15:05] kibagateaux
+https://docs.0x.org/0x-api-swap/api-references/get-swap-v1-quote
+
+{Embed}
+https://docs.0x.org/0x-api-swap/api-references/get-swap-v1-quote
+GET /swap/v1/quote
+Code4rena - ARCHIVE-Q4-2022 - debt-dao-nov3 [1031975563239374968].txt_Files/T2TpKqbKkDXZtbqzPlgG-7DC51.png
+
+
+[11/10/2022 16:18] acegawd
+DM @kiba
+
+{Reactions}
+👍 
+
+[11/10/2022 19:34] jumpdest7d
+@Bob @kiba all the best for the audit! Thanks for a very thorough project 🙌
+
+{Reactions}
+🙏 
+
+[11/10/2022 20:02] C4
+**🚨 CONTEST ALERT**
+
+@🐺wardens The **Debt DAO** contest is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: The sponsor team and judge will review the findings over the next couple of weeks. Keep an eye on #📢announcements for regular updates on how the contest is progressing through awarding 🤑🏆, judging 🧑‍⚖️ and reporting 📜. Feel free to ping a gardener if you have questions along the way!
+
+{Reactions}
+👏 (5) 
+
+[11/10/2022 20:02] lukejohn_
+great close
+
+
+[11/10/2022 20:09] martin7096
+A great one🤞
+
+
+[11/10/2022 20:17] ladboy233
+Great project!
+
+
+[11/10/2022 20:19] koolexc
+Great project indeed!
+
+
+[11/10/2022 20:32] 0xbtk
+great project with the best docs ever 💯
+
+
+[11/10/2022 22:24] PaludoX0#9748
+Very interesting protocol and very clear documentation 👍
+
+
+[11/10/2022 22:27] immeas
+yeah, kudos to the documentation
+
+
+[11/10/2022 23:40] axellab
+Nice sir
+
+
+[11/11/2022 13:36] zaskoh#2073
+someone know what extension this is?
+
+
+[11/11/2022 13:39] 0x1f8b
+It's a private one
+
+
+[11/11/2022 13:39] zaskoh#2073
+ty for the info 👍
+
+
+[11/11/2022 14:36] 0xdeadbeef0x
+Great project, loved the architecture and modularity. Good luck!
+
+
+[11/14/2022 13:08] aviggiano
+hey, what extension is that? nice one
+
+{Reactions}
+👍 (2) 
+
+[11/18/2022 16:56] kibagateaux
+starting to review all your reports today 🙂
+
+{Reactions}
+👌🏻 (11) 👏🏻 (6) rocket (5) 
+
+[11/18/2022 18:31] ladboy233
+👍
+
+
+[12/10/2022 08:26] deekshith09
+👀
+
+
+[12/10/2022 21:12] carlitox477
+https://tenor.com/view/sweating-nervous-wreck-gif-24688521
+
+{Embed}
+https://tenor.com/view/sweating-nervous-wreck-gif-24688521
+Code4rena - ARCHIVE-Q4-2022 - debt-dao-nov3 [1031975563239374968].txt_Files/sweating-nervous-BFA64.png
+
+
+[12/19/2022 11:48] Tomo | NinjAudit#7394
+👀
+
+
+[12/21/2022 18:00] un_for_given
+https://github.com/code-423n4/code423n4.com/pull/6228
+
+{Embed}
+https://github.com/code-423n4/code423n4.com/pull/6228
+Update Leaderboard by liveactionllama · Pull Request #6228 · code-4...
+Code4rena - ARCHIVE-Q4-2022 - debt-dao-nov3 [1031975563239374968].txt_Files/6228-6AC10
+
+
+[12/21/2022 18:12] cloudellie
+**:C4Keycap:  💸 🎉 Awards for DebtDAO**
+
+$11,613.68 USDC » @Trust 
+$9,439.36 USDC » @adriro 
+$8,432.72 USDC » @bin2chen 
+$7,858.73 USDC » @rvierdiiev 
+$7,817.38 USDC » @Bernd 
+$5,717.17 USDC » @Roman 
+$5,199.80 USDC » @Aphak5010 
+$3,471.30 USDC » @hansfriese 
+$2,743.34 USDC » @Jeiwan 
+$2,648.01 USDC » @0xdeadbeef0x 
+$2,480.30 USDC » @minhquanym 
+$2,022.15 USDC » @IllIllI 
+$1,981.42 USDC » @HE1M 
+$1,938.12 USDC » @ayeslick 
+$1,909.67 USDC » @cryptphi 
+$1,755.49 USDC » @perseverancesuccess 
+$1,573.54 USDC » @Ch_301 
+$1,553.44 USDC » @Rolezn 
+$1,468.98 USDC » @PaludoX0 
+$1,316.11 USDC » @joestakey 
+$1,181.59 USDC » @__141345__ 
+$1,161.40 USDC » SmartSek (@0xDjango, @hake | SmartSek) 
+$1,133.21 USDC » @smiling_heretic 
+$1,063.60 USDC » @KingNFT 
+$994.67 USDC » @0x1f8b 
+$691.09 USDC » @0xSmartContract 
+$673.39 USDC » @brgltd 
+$672.02 USDC » @Deivitto 
+$669.35 USDC » @tnevler 
+$669.35 USDC » @lukris02 
+$620.12 USDC » @delfin454000 
+$497.58 USDC » @Ruhum 
+$260.18 USDC » @rbserver 
+$252.00 USDC » @cccz 
+$220.35 USDC » @R2
+
+
+[12/21/2022 18:13] cloudellie
+$150.02 USDC » @eierina 
+$147.28 USDC » @cloudjunky 
+$141.94 USDC » @0xbepresent 
+$140.32 USDC » @Bnke 
+$117.29 USDC » @RedOneN 
+$115.92 USDC » @martin11 
+$115.92 USDC » @RaymondFam 
+$115.92 USDC » @peanuts 
+$115.49 USDC » @pashov 
+$113.25 USDC » @cryptonue 
+$110.58 USDC » @chrisdior4 
+$110.58 USDC » @Saintcode_ 
+$110.58 USDC » @ch0bu 
+$110.58 USDC » @thinklab 
+$110.58 USDC » @durianSausage 
+$110.58 USDC » @gogo 
+$110.58 USDC » @Rahoz 
+$110.58 USDC » @saneryee 
+$110.58 USDC » @ReyAdmirado 
+$110.58 USDC » @seyni 
+$110.58 USDC » @zaskoh 
+$110.58 USDC » @TomJ 
+$110.58 USDC » @EricTee 
+$110.58 USDC » @Diana 
+$110.58 USDC » @code-cipher 
+$110.58 USDC » @B2 
+$110.58 USDC » @Rotcivegaf 
+$110.58 USDC » @Awesome 
+$110.58 USDC » @ajtra 
+$110.58 USDC » @c3phas 
+$107.09 USDC » @0x52 
+$84.39 USDC » @Tomo | NinjAudit 
+$72.10 USDC » @Nyx
+$70.73 USDC » @carlitox477 
+$69.43 USDC » @immeas 
+$66.68 USDC » @merlin 
+$62.23 USDC » @codexploder 
+$61.35 USDC » @yurahod
+$61.35 USDC » @Dinesh11G 
+$61.35 USDC » @chaduke 
+$61.35 USDC » @mcwildy 
+$61.35 USDC » @i_got_hacked 
+$61.35 USDC » @w0Lfrum 
+$61.35 USDC » @Deekshith99 
+$61.35 USDC » @trustminimised 
+$61.35 USDC » @fatherOfBlocks 
+$61.35 USDC » @csanuragjain 
+$61.35 USDC » @catwhiskeys 
+$61.35 USDC » @0xRoxas 
+$61.35 USDC » @sakman 
+$61.35 USDC » BClabs (@nalus, @Reptilia) 
+$61.35 USDC » @apostle0x01 
+$61.35 USDC » @HardlyCodeMan 
+$61.35 USDC » @shark
+$61.35 USDC » @slowmoses 
+$61.35 USDC » @btk 
+$61.35 USDC » @ctf_sec 
+$61.35 USDC » @a12jmx 
+$61.35 USDC » @bulej93 
+$61.35 USDC » @Funen 
+$61.35 USDC » @cryptostellar5 
+$61.35 USDC » @pedr02b2 
+$61.35 USDC » @djxploit 
+$61.35 USDC » @Josiah 
+$61.35 USDC » @jumpdest7d 
+$61.35 USDC » @0xNazgul 
+$49.23 USDC » @emrekocak 
+$49.23 USDC » @0xRajkumar 
+$49.23 USDC » @exolorkistis 
+$49.23 USDC » @Metatron 
+$49.23 USDC » @karanctf 
+$49.23 USDC » @JC
+$49.23 USDC » @me_na0mi 
+$48.81 USDC » @0xladboy | Sparkware 
+$40.82 USDC » @datapunk 
+$13.42 USDC » @d3e4 
+$12.20 USDC » @everyanykey 
+$8.08 USDC » @Koolex 
+$8.08 USDC » @eighty 
+$6.71 USDC » @8olidity 
+$5.34 USDC » @Amithuddar 
+$5.34 USDC » bananasboys ( @miguelmtzinf, @Zer0dot)
+$4.04 USDC » @lotux 
+$2.67 USDC » @Satyam_Sharma 
+$2.67 USDC » @corerouter 
+
+
+**🏁 Findings summary**
+---------------------------
+High risk findings: 32 total, 6 unique
+Med risk findings: 126 total, 11 unique
+Gas findings: 42 total, 42 unique
+QA findings: 78 total, 78 unique
+
+Awards will be distributed on Polygon within the next 1-2 weeks. Congratulations all! 💸 💸 💸
+
+**Note:** *If you participated in this contest and don’t see your name on this list, please wait until the report is published and the findings repo is made public to check on your submissions.*
+
+{Reactions}
+🎉 (16) 🔥 (10) C4Keycap (11) 🥳 (5) 🚀 (3) hi5 💯 🙏 (3) 🚫 🍺 (2) 👍 Debt_DAORipple01 
+
+[12/21/2022 18:17] chrisdior4#1308
+My first reward over 100$ 😊 🚀
+
+{Reactions}
+hi5 (16) 🚀 (5) 👍 (2) 
+
+[12/21/2022 18:22] cloudellie
+Congratulations!
+
+{Reactions}
+❤️ (4) 
+
+[12/21/2022 18:30] thedrsniper
+I had a query, who is the judge dmvt on discord ?
+
+
+[12/21/2022 18:51] chaduke3730
+I could not find my name at first, and then noticed I actually got $61.35, still happy!  Congratulations to all, and admire those on the top!
+
+{Reactions}
+hi5 (7) 
+
+[12/21/2022 18:57] chaduke3730
+@chrisdior4 congrats, way to go!
+
+{Reactions}
+❤️ 
+
+[12/21/2022 19:02] cloudellie
+That's @LSDan 🧑‍⚖️
+
+{Reactions}
+thankyou 
+
+[12/21/2022 19:06] thedrsniper
+@LSDan I had a query so sent you a DM. Could you please have a look at it.
+Thanks
+
+{Reactions}
+ethereum 
+
+==============================================================
+Exported 196 message(s)
+==============================================================
